@@ -66,6 +66,7 @@ readApsimHead <- function(filename, headname, split = ' *, *', ...)
 #' Split a title
 #'
 #' @param title title
+#' @param split split
 #' @export
 splitTitle <- function(title, split = ',')
 {

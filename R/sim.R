@@ -9,6 +9,7 @@
 #' 
 #' @param template File path to template sim files 
 #' @param factors A data frame which contained all combinations of factors.
+#' @param parent The xml node to insert new attributes
 #' The column names of data frame are parameter names in the sim file.
 #' @return A list which contain all simulations. Row names of factors 
 #' are used for simulation names.
@@ -195,6 +196,8 @@ addComponent <- function(sim, component, parent = '<system name="paddock"')
 
 #' Add irrigation at fixed date component
 #' @param amount Irrigation amount
+#' @param date date
+#' @param name name
 #' @export
 irrigationAtFixedDate <- function(amount, date, name = 'Irrigate on fixed date')
 {    
@@ -209,6 +212,8 @@ irrigationAtFixedDate <- function(amount, date, name = 'Irrigate on fixed date')
 
 #' Add fertilizaton at sowing component
 #' @param amount Irrigation amount
+#' @param type type
+#' @param name name
 #' @export
 fertiliseAtSowing <- function(amount, type, name = 'Fertilise at sowing')
 {    
@@ -223,6 +228,9 @@ fertiliseAtSowing <- function(amount, type, name = 'Fertilise at sowing')
 
 #' Add fertilizaton at fixed date component
 #' @param amount Irrigation amount
+#' @param type type
+#' @param date date
+#' @param name name
 #' @export
 fertiliseAtFixed <- function(amount, type, date, name = 'Fertilise on fixed date')
 {    

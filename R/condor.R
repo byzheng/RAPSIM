@@ -49,13 +49,13 @@ compressInputs <- function(input, output,
 #'
 #' @param project The project name in the ClusterRun
 #' @param factors The factors list to generate simulations
+#' @param sharedrive sharedrive
+#' @param local local
+#' @param r_code r_code
 #' @param par_factor The parallel factors to write into database of ClusterRun
 #' @param input_factor The factors to indicate input files
 #' @param skip_factor The skip factors to be processed in the condor clients
-#' @param base The base folder to store inputs and outputs
-#' @param local_base The base folder in local computer
 #' @param r_script The path to Rscript.exe file
-#' @param folder_factor Folder to store the factor files
 #' @param folder_prefix Output folder to store the out files of all simulations
 #' @param ids The starting id of simulations
 #' @export
@@ -173,15 +173,13 @@ clusterRunPreparingTask <- function(
 #' @param traits The vector of traits write into netcdf file
 #' @param par_factor The factors will be parallel processed
 #' @param base The base folder to store APSIM output files
-#' @param output_files The data.frame or vector of files to specify the output file names and levels
+#' @param factor_files The data.frame or vector of files to specify the output file names and levels
 #' @param base_sub The sub-folder to store the single output files
 #' @param merge_out_nc Whether merge the parallel outputs into an array when updating netcdf files.
 #' @param yearvar Variable name of yeas in the APSIM output file
 #' @param cpu_num The cpu number of parallel
 #' @param tmp_folder The tmp folder to store merge APSIM output files
 #' @export
-
-
 apsimOut2Nc <- function(filename, years, factors, traits, par_factor,
     base, factor_files, 
     base_sub = NULL,

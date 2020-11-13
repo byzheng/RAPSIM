@@ -28,6 +28,7 @@ ncClose <- function(nc)
 #' Get all dimension names for one variables
 #'
 #' @param nc An object of class ncdf4 (as returned from nc_open), indicating what file to read from.
+#' @var variable name
 ncGetDimNames <- function(nc, var)
 {
     vars <- nc$var[[var]]
@@ -271,6 +272,13 @@ ncCreateApsim <- function(filename, years, factors,
 
 
 #' Read APSIM out file
+#' @param nc nc
+#' @param filenames filenames
+#' @param start start
+#' @param res.array res.array
+#' @param yearvar yearvar
+#' @param traits traits
+#' @param ... extra arguments
 #' @export
 ncReadApsimOut <- function(nc, filenames, start, 
     res.array, yearvar = 'Year', traits = NULL, ...)
@@ -417,6 +425,8 @@ ncReadApsimOut <- function(nc, filenames, start,
 }
 
 #' Update netcdf file 
+#' @param nc nc
+#' @param outputs outputs
 #' @export
 ncUpdateApsim <- function(nc, outputs)
 {
@@ -435,6 +445,8 @@ ncUpdateApsim <- function(nc, outputs)
 
 
 #' Obtain start according dimension levels
+#' @param nc nc
+#' @param ... extra arguments
 #' @export
 ncGetStart <- function(nc, ...)
 {
@@ -612,24 +624,24 @@ ncSubset <- function(ncs, filename, traits = NULL, ...)
     ncClose(new_nc)
 }
 
-
-#' Calculate index for variables of applying a function
-#'
-#' @param nc An object of class ncdf4 (as returned from ncOpen), indicating what file to read from.
-#' @param depth The depth for variables of applying a function.
-ncCalculateApplyIndex <- function(nc, depth = length(nc$dim) - 1)
-{
-    
-}
-
-#' Return index for variables of applying a function
-#'
-#' @param nc An object of class ncdf4 (as returned from ncOpen), indicating what file to read from.
-#' @param ... Other arguments to specify variables of dimensions 
-ncGetApplyIndex <- function(nc, ...)
-{
-    
-}
+#' 
+#' #' Calculate index for variables of applying a function
+#' #'
+#' #' @param nc An object of class ncdf4 (as returned from ncOpen), indicating what file to read from.
+#' #' @param depth The depth for variables of applying a function.
+#' ncCalculateApplyIndex <- function(nc, depth = length(nc$dim) - 1)
+#' {
+#'     
+#' }
+#' 
+#' #' Return index for variables of applying a function
+#' #'
+#' #' @param nc An object of class ncdf4 (as returned from ncOpen), indicating what file to read from.
+#' #' @param ... Other arguments to specify variables of dimensions 
+#' ncGetApplyIndex <- function(nc, ...)
+#' {
+#'     
+#' }
 
 
 
