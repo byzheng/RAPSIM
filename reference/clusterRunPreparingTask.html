@@ -111,10 +111,19 @@
     <p>Preparing task table for APSIM simulations</p>
     </div>
 
-    <pre class="usage"><span class='fu'>clusterRunPreparingTask</span><span class='op'>(</span><span class='va'>project</span>, <span class='va'>factors</span>, <span class='va'>sharedrive</span>, <span class='va'>local</span>, <span class='va'>par_factor</span>,
-  <span class='va'>input_factor</span>, skip_factor <span class='op'>=</span> <span class='cn'>NULL</span>, folder_prefix <span class='op'>=</span> <span class='cn'>NULL</span>,
-  r_script <span class='op'>=</span> <span class='st'>"R\\bin\\i386\\Rscript.exe"</span>, r_code <span class='op'>=</span> <span class='st'>"RCode.R"</span>,
-  ids <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>clusterRunPreparingTask</span><span class='op'>(</span>
+  <span class='va'>project</span>,
+  <span class='va'>factors</span>,
+  <span class='va'>sharedrive</span>,
+  <span class='va'>local</span>,
+  <span class='va'>par_factor</span>,
+  <span class='va'>input_factor</span>,
+  skip_factor <span class='op'>=</span> <span class='cn'>NULL</span>,
+  folder_prefix <span class='op'>=</span> <span class='cn'>NULL</span>,
+  r_script <span class='op'>=</span> <span class='st'>"R\\bin\\i386\\Rscript.exe"</span>,
+  r_code <span class='op'>=</span> <span class='st'>"RCode.R"</span>,
+  ids <span class='op'>=</span> <span class='fl'>0</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -126,6 +135,14 @@
     <tr>
       <th>factors</th>
       <td><p>The factors list to generate simulations</p></td>
+    </tr>
+    <tr>
+      <th>sharedrive</th>
+      <td><p>sharedrive</p></td>
+    </tr>
+    <tr>
+      <th>local</th>
+      <td><p>local</p></td>
     </tr>
     <tr>
       <th>par_factor</th>
@@ -148,20 +165,12 @@
       <td><p>The path to Rscript.exe file</p></td>
     </tr>
     <tr>
+      <th>r_code</th>
+      <td><p>r_code</p></td>
+    </tr>
+    <tr>
       <th>ids</th>
       <td><p>The starting id of simulations</p></td>
-    </tr>
-    <tr>
-      <th>base</th>
-      <td><p>The base folder to store inputs and outputs</p></td>
-    </tr>
-    <tr>
-      <th>local_base</th>
-      <td><p>The base folder in local computer</p></td>
-    </tr>
-    <tr>
-      <th>folder_factor</th>
-      <td><p>Folder to store the factor files</p></td>
     </tr>
     </table>
 
