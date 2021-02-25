@@ -91,8 +91,7 @@ changeAttribute <- function(xml, attri, new)
 #' @export
 findXmlValue <- function(xml, key)
 {
-    library(stringr)
-    value <- str_trim(gsub(sprintf('<%s.*>(.*)</%s>', key, key), 
+    value <- stringr::str_trim(gsub(sprintf('<%s.*>(.*)</%s>', key, key), 
         '\\1', xml[grep(sprintf('</%s>', key), xml)]))
     if (length(value) == 0)
     {

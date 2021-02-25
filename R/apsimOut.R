@@ -16,12 +16,12 @@ readApsimOut <- function(filename)
     }
     temp <- temp[grep("=", temp)]
     
-    res <- read.table(filename,
+    res <- utils::read.table(filename,
             sep = '', header = FALSE, as.is = TRUE, 
             skip = length(temp) + 2,
             col.names = scan(filename, '', 
                     sep = '', skip = length(temp), 
-                    nline = 1, quiet = TRUE))
+                    nlines = 1, quiet = TRUE))
     return (res)
 }
 
